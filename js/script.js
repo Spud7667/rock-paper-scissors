@@ -25,19 +25,24 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = prompt("Rock, Paper or Scissors?: ").toUpperCase()
-    let rock = 1
-    let paper = 2
-    let scissors = 3
+    let choices = [
+        {choice: "rock", value: 1},
+        {choice: "paper", value: 2},
+        {choice: "scissors", value: 3},
+    ]
+    // let rock = 1
+    // let paper = 2
+    // let scissors = 3
 
     if(playerChoice == "ROCK") {
         // console.log(rock)
-        return rock
+        return choices[0].value
     } else if (playerChoice == "PAPER") {
         // console.log(paper)
-        return paper
+        return choices[1].value
     } else if (playerChoice == "SCISSORS") {
         // console.log(scissors)
-        return scissors
+        return choices[2].value
     } else {
         console.log("Wrong input")
     }
