@@ -63,39 +63,40 @@ function playGame() {
     switch(true) {
         case (cpu === 1 && player === 1):
             console.log("Both guessed rock! It's a TIE!");
-            break;
+            return;
         case (cpu === 2 && player === 2):
             console.log("Both guessed paper! It's a TIE!");
-            break;
+            return;
         case (cpu === 3 && player === 3):
             console.log("Both guessed scissors! It's a TIE!");
-            break;
+            return;
         case (cpu === 1 && player === 3):
             console.log("Computer: Rock & Player: Scissors - Computer Wins!");
-            break;
+            return;
         case (cpu === 2 && player === 1):
             console.log("Computer: Paper & Player: Rock - Computer Wins!");
-            break;
+            return;
         case (cpu === 3 && player === 2):
             console.log("Computer: Scissors & Player: Paper - Computer Wins!");
-            break;
+            return;
         case (cpu === 1 && player === 2):
             console.log("Computer: Rock & Player: Paper - Player Wins!");
-            break;
+            return;
         case (cpu === 2 && player === 3):
             console.log("Computer: Paper & Player: Scissors - Player Wins!");
-            break;
+            return;
         case (cpu === 3 && player === 1):
             console.log("Computer: Scissors & Player: Scissors - Player Wins!");
-            break;
+            return;
         default:
             console.log("Enter valid values for CPU and Player (1 for Rock, 2 for Paper, 3 for Scissors).");
     }
     
 
 }
-
-playGame()
+for (let i = 0; i < 5; i++ ) {
+    playGame();
+}
 
 // If sats som jämför värdet (siffrorna) i båda funktionerna
 // Ändrar värdet från siffror till bokstäver
