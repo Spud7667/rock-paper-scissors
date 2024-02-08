@@ -6,6 +6,17 @@ rock, paper, scissors and return that value and store it in a variable.
 
 */
 
+let rock = document.querySelector(".rock").addEventListener("click", () => {
+    getPlayerChoice("rock");
+})
+
+let paper = document.querySelector(".paper").addEventListener("click", () => {
+    getPlayerChoice("paper");
+})
+
+let scissors = document.querySelector(".scissors").addEventListener("click", () => {
+    getPlayerChoice("scissors");
+})
 
 function getComputerChoice() {
     let computerChoice = [
@@ -23,28 +34,17 @@ function getComputerChoice() {
 
 // En funtktion som tar player input och skickar tillbaka ett nummer
 
-function getPlayerChoice() {
-    let playerChoice = prompt("Rock, Paper or Scissors?: ").toUpperCase()
-    let choices = [
-        {choice: "rock", value: 1},
-        {choice: "paper", value: 2},
-        {choice: "scissors", value: 3},
-    ]
-    // let rock = 1
-    // let paper = 2
-    // let scissors = 3
-
-    if(playerChoice == "ROCK") {
-        // console.log(rock)
-        return choices[0].value
-    } else if (playerChoice == "PAPER") {
-        // console.log(paper)
-        return choices[1].value
-    } else if (playerChoice == "SCISSORS") {
-        // console.log(scissors)
-        return choices[2].value
-    } else {
-        console.log("Wrong input")
+function getPlayerChoice(choice) {
+    switch (choice) {
+        case "rock":
+            playGame(1);
+            break;
+        case "paper":
+            playGame(2);
+            break;
+        case "scissors":
+            playGame(3);
+            break;
     }
 }
 
@@ -55,9 +55,8 @@ function getPlayerChoice() {
 // Paper = 2
 // Scis = 3
 
-function playGame() {
+function playGame(player) {
     let cpu = getComputerChoice()
-    let player = getPlayerChoice()
     console.log("Computer Choose: " + cpu, "Player Choose: " + player)
 
     switch(true) {
@@ -94,9 +93,9 @@ function playGame() {
     
 
 }
-for (let i = 0; i < 5; i++ ) {
-    playGame();
-}
+// for (let i = 0; i < 5; i++ ) {
+//     playGame();
+// }
 
 // If sats som jämför värdet (siffrorna) i båda funktionerna
 // Ändrar värdet från siffror till bokstäver
