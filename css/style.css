@@ -5,6 +5,7 @@ body {
     align-items: center;
     flex-direction: column;
     user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 div.wrapper {
@@ -16,6 +17,7 @@ div.wrapper {
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 1px;
 }
 
 main {
@@ -25,9 +27,13 @@ main {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     width: 300px;
+}
+
+h6:hover {
+    transform: scale(1.1);
 }
 
 div.score {
@@ -37,6 +43,7 @@ div.score {
     align-items: center;
     flex-direction: row;
     flex: 1;
+    width: 100%;
 }
 
 p.rock, p.paper, p.scissors {
@@ -52,6 +59,14 @@ p.rock:hover, p.paper:hover, p.scissors:hover {
     background: #eee;
     color: black;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+p.rock:active, p.paper:active, p.scissors:active {
+    background: #333;
+    color: rgb(189, 189, 189);
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 p.playerScore {
@@ -63,6 +78,44 @@ p.computerScore {
 }
 
 div.belowWrapper {
-    background: red;
+    display: flex;
+    flex-direction: column;
     width: 300px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: white;
+}
+
+div.head {
+    display: flex;
+    background: white;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+div.winner {
+    color: rgb(224, 168, 64);
+    font-weight: bolder;
+    text-align: center;
+}
+
+div.result {
+    text-align: center;
+}
+
+.head p {
+    font-size: 12px;
+    display: flex;
+    position: absolute;
+    margin-top: 50px;
+
 }

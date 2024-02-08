@@ -6,6 +6,17 @@ rock, paper, scissors and return that value and store it in a variable.
 
 */
 
+document.querySelector("h6").addEventListener("mouseover", () => {
+    let update = document.createElement("p");
+    update.innerText = "Update";
+    document.querySelector(".head").appendChild(update);
+})
+
+document.querySelector("h6").addEventListener("mouseout", () => {
+    let update = document.querySelector(".head p");
+    document.querySelector(".head").removeChild(update);
+})
+
 let rock = document.querySelector(".rock").addEventListener("click", () => {
     getPlayerChoice("rock");
 })
