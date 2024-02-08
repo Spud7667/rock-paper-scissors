@@ -1,0 +1,68 @@
+body {
+    background: #eee;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+}
+
+div.wrapper {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    max-height: 100vh;
+    background: #ffc0cb;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    display: flex; 
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+div.score {
+    display: flex;
+    justify-content: space-between;
+    background: #fda7b5;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+}
+
+p.rock, p.paper, p.scissors {
+    padding: 10px 20px;
+    background: rgb(63, 63, 63);
+    border-radius: 30px;
+    color: rgb(189, 189, 189);
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+p.rock:hover, p.paper:hover, p.scissors:hover {
+    background: #eee;
+    color: black;
+    cursor: pointer;
+}
+
+p.playerScore {
+    padding-left: 10px;
+}
+
+p.computerScore {
+    padding-right: 10px;
+}
+
+div.belowWrapper {
+    background: red;
+    width: 300px;
+}

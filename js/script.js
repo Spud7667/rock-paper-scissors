@@ -18,6 +18,11 @@ let scissors = document.querySelector(".scissors").addEventListener("click", () 
     getPlayerChoice("scissors");
 })
 
+let computerScore = 0;
+let playerScore = 0;
+let updatedPlayerScore = document.querySelector("p.playerScore");
+let updatedComputerScore = document.querySelector("p.computerScore");
+
 function getComputerChoice() {
     let computerChoice = [
         { choice: "Rock", value: 1},
@@ -61,37 +66,88 @@ function playGame(player) {
 
     switch(true) {
         case (cpu === 1 && player === 1):
-            console.log("Both guessed rock! It's a TIE!");
+            document.querySelector("div.result").innerText = "Both guessed rock! It's a TIE!";
+            document.querySelector("div.winner").innerText = "";
             return;
         case (cpu === 2 && player === 2):
-            console.log("Both guessed paper! It's a TIE!");
+            document.querySelector("div.result").innerText = "Both guessed paper! It's a TIE!";
+            document.querySelector("div.winner").innerText = "";
             return;
         case (cpu === 3 && player === 3):
-            console.log("Both guessed scissors! It's a TIE!");
+            document.querySelector("div.result").innerText = "Both guessed scissors! It's a TIE!";
+            document.querySelector("div.winner").innerText = "";
             return;
         case (cpu === 1 && player === 3):
-            console.log("Computer: Rock & Player: Scissors - Computer Wins!");
+            document.querySelector("div.result").innerText = "Computer: Rock & Player: Scissors - Computer Wins!";
+            document.querySelector("div.winner").innerText = "";
+            computerScore++
+            updatedComputerScore.innerText = `${computerScore}: Computer Score`;
+            winCondition();
             return;
         case (cpu === 2 && player === 1):
-            console.log("Computer: Paper & Player: Rock - Computer Wins!");
+            document.querySelector("div.result").innerText = "Computer: Paper & Player: Rock - Computer Wins!";
+            document.querySelector("div.winner").innerText = "";
+            computerScore++
+            updatedComputerScore.innerText = `${computerScore}: Computer Score`;
+            winCondition();
             return;
         case (cpu === 3 && player === 2):
-            console.log("Computer: Scissors & Player: Paper - Computer Wins!");
+            document.querySelector("div.result").innerText = "Computer: Scissors & Player: Paper - Computer Wins!";
+            document.querySelector("div.winner").innerText = "";
+            computerScore++
+            updatedComputerScore.innerText = `${computerScore}: Computer Score`;
+            winCondition();
             return;
         case (cpu === 1 && player === 2):
-            console.log("Computer: Rock & Player: Paper - Player Wins!");
+            document.querySelector("div.result").innerText = "Computer: Rock & Player: Paper - Player Wins!";
+            document.querySelector("div.winner").innerText = "";
+            playerScore++
+            updatedPlayerScore.innerText = `Player Score: ${playerScore}`;
+            winCondition();
             return;
         case (cpu === 2 && player === 3):
-            console.log("Computer: Paper & Player: Scissors - Player Wins!");
+            document.querySelector("div.result").innerText = "Computer: Paper & Player: Scissors - Player Wins!";
+            document.querySelector("div.winner").innerText = "";
+            playerScore++
+            updatedPlayerScore.innerText = `Player Score: ${playerScore}`;
+            winCondition();
             return;
         case (cpu === 3 && player === 1):
-            console.log("Computer: Scissors & Player: Scissors - Player Wins!");
+            document.querySelector("div.result").innerText = "Computer: Scissors & Player: Scissors - Player Wins!";
+            document.querySelector("div.winner").innerText = "";
+            playerScore++
+            updatedPlayerScore.innerText = `Player Score: ${playerScore}`;
+            winCondition();
             return;
         default:
             console.log("Enter valid values for CPU and Player (1 for Rock, 2 for Paper, 3 for Scissors).");
     }
     
 
+}
+
+function winCondition() {
+    if (playerScore === 5) {
+        document.querySelector("div.winner").innerText = "You Win! Game Over.";
+        resetScore();
+        } else if (computerScore === 5) {
+            document.querySelector("div.winner").innerText = "Computer Wins! Game Over.";
+            resetScore();
+        }
+
+    }
+
+function resetScore() {
+    if (playerScore === 5 || computerScore === 5) {
+    computerScore = 0;
+    playerScore = 0;
+    updatedComputerScore.innerText = `Computer Score: ${computerScore}`;
+    updatedPlayerScore.innerText = `Player Score: ${playerScore}`;
+    computerScore = 0;
+    playerScore = 0;
+    updatedComputerScore.innerText = `Computer Score: ${computerScore}`;
+    updatedPlayerScore.innerText = `Player Score: ${playerScore}`;
+}
 }
 // for (let i = 0; i < 5; i++ ) {
 //     playGame();
