@@ -8,7 +8,7 @@ rock, paper, scissors and return that value and store it in a variable.
 
 document.querySelector("h6").addEventListener("mouseover", () => {
     let update = document.createElement("p");
-    update.innerText = "Update";
+    update.innerText = "First to 5 points win!";
     document.querySelector(".head").appendChild(update);
 })
 

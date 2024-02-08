@@ -119,3 +119,35 @@ div.result {
     margin-top: 50px;
 
 }
+
+div.footerwrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width: 100%;
+    color: #636363;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+div.footerwrap p, a {
+    margin: 0;
+}
+
+span {
+    color: red;
+}
+
+div.footerwrap a {
+    text-decoration: none;
+    color: #636363;
+    font-weight: bolder;
+}
+
+div.footerwrap a:hover {
+    color: #333;
+}
